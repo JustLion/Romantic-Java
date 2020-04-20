@@ -24,18 +24,7 @@ public class ArrayStackDemo {
 						int popOper = operStack.pop();
 						int num2 = numStack.pop();
 						int num1 = numStack.pop();
-						int number;
-						if ('*' == popOper) {
-							number = num2 * num1;
-						} else if ('/' == popOper) {
-							number = num2 / num1;
-						} else if ('+' == popOper) {
-							number = num2 + num1;
-						} else if ('-' == popOper) {
-							number = num2 - num1;
-						} else {
-							throw new RuntimeException("运算符异常");
-						}
+						int number = caculate(num1,num2,popOper);
 						operStack.push(aChar);
 						numStack.push(number);
 					}
@@ -71,5 +60,27 @@ public class ArrayStackDemo {
 	 */
 	public static boolean isOper(int value) {
 		return value == '+' || value == '-' || value == '*' || value == '/';
+	}
+
+	/**
+	 * 计算
+	 *
+	 * @param num1 数栈第2次弹出数字
+	 * @param num2 数栈第1次弹出数字
+	 * @param oper 运算符
+	 * @return 计算后的结果
+	 */
+	public static int caculate(int num1, int num2, int oper) {
+		if ('*' == oper) {
+			return num2 * num1;
+		} else if ('/' == oper) {
+			return num2 / num1;
+		} else if ('+' == oper) {
+			return num2 + num1;
+		} else if ('-' == oper) {
+			return num2 - num1;
+		} else {
+			throw new RuntimeException("运算符异常");
+		}
 	}
 }
