@@ -71,16 +71,23 @@ public class ArrayStackDemo {
 	 * @return 计算后的结果
 	 */
 	public static int caculate(int num1, int num2, int oper) {
-		if ('*' == oper) {
-			return num2 * num1;
-		} else if ('/' == oper) {
-			return num2 / num1;
-		} else if ('+' == oper) {
-			return num2 + num1;
-		} else if ('-' == oper) {
-			return num2 - num1;
-		} else {
-			throw new RuntimeException("运算符异常");
+		int res = 0; // res 用于存放计算的结果
+		switch (oper) {
+			case '+':
+				res = num1 + num2;
+				break;
+			case '-':
+				res = num2 - num1;// 注意顺序
+				break;
+			case '*':
+				res = num1 * num2;
+				break;
+			case '/':
+				res = num2 / num1;
+				break;
+			default:
+				break;
 		}
+		return res;
 	}
 }

@@ -99,32 +99,4 @@ public class ArrayStack {
 		return stack[top];
 	}
 
-	/**
-	 * 进行计算
-	 * @param num1 数字1
-	 * @param num2 数字2
-	 * @param oper 操作符
-	 * @return 计算结果
-	 */
-	public int cal(int num1, int num2, int oper) {
-		int res = 0; // res 用于存放计算的结果
-		switch (oper) {
-			case '+':
-				res = num1 + num2;
-				break;
-			case '-':
-				res = num2 - num1;// 注意顺序
-				break;
-			case '*':
-				res = num1 * num2;
-				break;
-			case '/':
-				res = num2 / num1;
-				break;
-			default:
-				break;
-		}
-		return res;
-	}
-
 }
