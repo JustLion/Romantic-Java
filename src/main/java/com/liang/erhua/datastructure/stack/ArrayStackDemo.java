@@ -21,10 +21,10 @@ public class ArrayStackDemo {
 					if (priority(aChar) > priority(operStack.peek())) {
 						operStack.push(aChar);
 					} else {
-						int popOper = operStack.pop();
+						int oper = operStack.pop();
 						int num2 = numStack.pop();
 						int num1 = numStack.pop();
-						int number = caculate(num1,num2,popOper);
+						int number = caculate(num1,num2,oper);
 						operStack.push(aChar);
 						numStack.push(number);
 					}
@@ -32,6 +32,13 @@ public class ArrayStackDemo {
 			} else {
 				numStack.push(aChar - 48);
 			}
+		}
+		while (!operStack.isEmpty()) {
+			int oper = operStack.pop();
+			int num2 = numStack.pop();
+			int num1 = numStack.pop();
+			int number = caculate(num1,num2,oper);
+			numStack.push(number);
 		}
 		System.out.println(numStack.pop());
 	}
