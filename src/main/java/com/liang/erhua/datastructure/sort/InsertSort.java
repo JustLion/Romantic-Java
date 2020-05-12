@@ -1,5 +1,7 @@
 package com.liang.erhua.datastructure.sort;
 
+import java.util.Arrays;
+
 /**
  * @author: liangjia
  * @date: created in 15:50 2020年04月21日
@@ -9,7 +11,9 @@ package com.liang.erhua.datastructure.sort;
  */
 public class InsertSort {
 	public static void main(String[] args) {
-		int[] arr = {101, 34, 119, 1 };
+		int[] arr = {101, 34, 119, 1,23,-101 };
+		insertSort(arr);
+		System.out.println(Arrays.toString(arr));
 	}
 
 	/**
